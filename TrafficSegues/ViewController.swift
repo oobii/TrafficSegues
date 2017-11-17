@@ -8,9 +8,12 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController {
     
-    @IBOutlet weak var textField: UITextField!
+    
+    @IBOutlet weak var segueSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,24 +25,26 @@ class ViewController: UIViewController {
     
     
     
-    @IBAction func unwindToRed(unwindSegue: UIStoryboardSegue) {
-        
-    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
-    // using this prepare to set th title in the Yellow ViewController
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    @IBAction func yellowButtonTapped(_ sender: UIButton) {
         
-       // if let textField = textField.text {
-            segue.destination.navigationItem.title = textField.text
-       // }
-        
+        if segueSwitch.isOn {
+            performSegue(withIdentifier: "Yellow", sender: nil)
+        }
     }
     
     
+    @IBAction func greeButtonTapped(_ sender: UIButton) {
+        
+        if segueSwitch.isOn {
+            performSegue(withIdentifier: "Green", sender: nil)
+        }
+    }
 }
 
