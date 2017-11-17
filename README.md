@@ -1,0 +1,2 @@
+Every UIViewController has a method, prepare(for segue:, sender:), which is called before a segue from the view controller takes place. 
+In order to perform a segue programmatically, there is a method that exists on view controllers called performSegue(withIdentifier:, sender:). The first parameter for this method takes a String, which corresponds to the identifier that you assigned the segues in the Attributes inspector. The sender parameter is additional information that you can supply to the segue regarding which control triggered the segue
